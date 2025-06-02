@@ -1,0 +1,190 @@
+.container {
+  min-height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+
+/* TopBar */
+.topbar {
+  position: absolute;
+  width: 1867.95px;
+  height: 87px;
+  left: -7.99px;
+  top: 70px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 91px;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  position: relative;
+  width: 233.12px;
+  height: 81px;
+  margin-left: 60px;
+}
+
+.title {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #0055A2;
+  margin-left: 10px;
+}
+
+.nav {
+  display: flex;
+  margin-left: auto;
+  margin-right: 60px;
+  align-items: center;
+}
+
+.navLink {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.divider {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+/* Content layout */
+.contentSection {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1800px;
+  margin: 0 auto;
+  margin-top: 200px; /* To account for the fixed topbar */
+  padding: 0 50px;
+}
+
+.textContent {
+  max-width: 755px;
+  margin-right: 50px;
+}
+
+.aboutHeading {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 53px;
+  line-height: 64px;
+  color: #0055A2;
+  margin-bottom: 40px;
+}
+
+.aboutDescription {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  color: #101010;
+  margin-bottom: 60px;
+}
+
+.learnMoreContainer {
+  margin-top: 60px;
+}
+
+.learnMoreButton {
+  width: 227px;
+  height: 74px;
+  background: #0055A2;
+  border-radius: 39px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learnMoreButton:hover {
+  background-color: #00417C;
+}
+
+.imageContent {
+  flex-shrink: 0;
+}
+
+.teamImage {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .contentSection {
+    flex-direction: column;
+  }
+  
+  .imageContent {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .teamImage {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    position: relative;
+    width: 95%;
+    left: 0;
+    margin: 20px auto;
+    padding: 10px;
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .logoContainer {
+    margin: 10px 0;
+  }
+  
+  .nav {
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contentSection {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+  
+  .aboutHeading {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .aboutDescription {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

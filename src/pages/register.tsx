@@ -1,67 +1,113 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Register.module.css';
 
 const Register: React.FC = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-            return;
-        }
-        // Add API call for registration here
-        console.log({ username, email, password });
-    };
-
-    return (
-        <div>
-            <h1>Register</h1>
+  const [formData, setFormData] = useState({
+    userId: '',
+    name: '',
+    password: '',
+    confirmPassword: ''
+  });
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Add validation and form submission logic here
+    console.log('Form submitted:', formData);
+  };
+  
+  return (
+    <div className={styles.signupContainer}>
+      <div className={styles.signupCard}>
+        <div className={styles.contentWrapper}>
+          {/* Left side - Image */}
+          <div className={styles.imageContainer}>
+            <Image
+              src="/registrationimage.png" // Make sure to add this image to your public folder
+              alt="Registration illustration"
+              width={467}
+              height={611}
+              priority
+            />
+          </div>
+          
+          {/* Right side - Form */}
+          <div className={styles.formContainer}>
+            <h1 className={styles.registerTitle}>Register</h1>
+            
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Username:</label>
-                    <input 
-                        type="text" 
-                        value={username} 
-                        onChange={(e) => setUsername(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input 
-                        type="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Confirm Password:</label>
-                    <input 
-                        type="password" 
-                        value={confirmPassword} 
-                        onChange={(e) => setConfirmPassword(e.target.value)} 
-                        required 
-                    />
-                </div>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                <button type="submit">Register</button>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="userId">User ID</label>
+                <input
+                  type="text"
+                  id="userId"
+                  name="userId"
+                  className={styles.formInput}
+                  value={formData.userId}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className={styles.formInput}
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className={styles.formInput}
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  className={styles.formInput}
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              
+              <div className={styles.submitContainer}>
+                <button type="submit" className={styles.submitButton}>
+                  Submit
+                </button>
+              </div>
             </form>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Register;

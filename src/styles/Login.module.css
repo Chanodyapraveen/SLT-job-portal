@@ -1,0 +1,192 @@
+.loginContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.loginCard {
+  width: 1222px;
+  height: 663px;
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 39px -11px rgba(0, 0, 0, 0.25);
+  border-radius: 27px;
+  overflow: hidden;
+}
+
+/* Form Section (Left side) */
+.formSection {
+  position: relative;
+  width: 504px;
+  height: 614px;
+  background: #0055A2;
+  border-radius: 27px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputLabel {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.inputField {
+  width: 414px;
+  height: 58px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.signInButton {
+  width: 414px;
+  height: 58px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #2D46CE;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.signInButton:hover {
+  background: #f0f0f0;
+}
+
+.accountOptions {
+  margin-top: 30px;
+}
+
+.signupText {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.signupLink {
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.dividerContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 3px;
+  background: #FFFFFF;
+  max-width: 167px;
+}
+
+.orText {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin: 0 15px;
+}
+
+.googleButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.googleButton:hover {
+  transform: scale(1.05);
+}
+
+/* Illustration Section (Right side) */
+.illustrationSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.illustration {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .loginCard {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .formSection {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    border-radius: 27px 27px 0 0;
+  }
+  
+  .inputField, .signInButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .illustrationSection {
+    display: none;
+  }
+}

@@ -1,44 +1,103 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Login.module.css';
 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle login logic here
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
-
-    return (
-        <div className="login-container">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
+const Login: React.FC = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Login attempt with:', formData);
+    // Add authentication logic here
+  };
+  
+  return (
+    <div className={styles.loginContainer}>
+      <div className={styles.loginCard}>
+        {/* Left Side - Login Form */}
+        <div className={styles.formSection}>
+          <h1 className={styles.loginTitle}>Login</h1>
+          
+          <form onSubmit={handleSubmit} className={styles.loginForm}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="email" className={styles.inputLabel}>Email address :</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className={styles.inputField}
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className={styles.inputGroup}>
+              <label htmlFor="password" className={styles.inputLabel}>Password :</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className={styles.inputField}
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <button type="submit" className={styles.signInButton}>
+              Sign In
+            </button>
+          </form>
+          
+          <div className={styles.accountOptions}>
+            <p className={styles.signupText}>
+              Don&apos;t you have account? <Link href="/register" className={styles.signupLink}>SignUp</Link>
+            </p>
+            
+            <div className={styles.dividerContainer}>
+              <div className={styles.divider}></div>
+              <span className={styles.orText}>OR</span>
+              <div className={styles.divider}></div>
+            </div>
+            
+            <button className={styles.googleButton}>
+              <Image 
+                src="/google-icon.png" 
+                alt="Sign in with Google" 
+                width={30} 
+                height={30} 
+              />
+            </button>
+          </div>
         </div>
-    );
+        
+        {/* Right Side - Illustration */}
+        <div className={styles.illustrationSection}>
+          <Image
+            src="/login-illustration.png"
+            alt="Login illustration"
+            width={628}
+            height={603}
+            className={styles.illustration}
+            priority
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Login;

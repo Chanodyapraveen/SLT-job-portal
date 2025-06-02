@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import styles from './Header.module.css'; // Adjust the path as necessary
 
 const Header: React.FC = () => {
     return (
@@ -14,10 +15,10 @@ const Header: React.FC = () => {
                         <Link href="/jobs">Jobs</Link>
                     </li>
                     <li>
-                        <Link href="/login">Login</Link>
+                        <Link href="/login" className={styles.navLink}>Login</Link>
                     </li>
                     <li>
-                        <Link href="/register">Register</Link>
+                        <Link href="/register" className={styles.navLink} style={{ marginLeft: '10px' }}>Register</Link>
                     </li>
                 </ul>
             </nav>

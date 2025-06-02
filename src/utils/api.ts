@@ -3,14 +3,9 @@ import axios from 'axios';
 const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 export const fetchJobs = async () => {
-    try {
-        // Use /posts as a mock for jobs
-        const response = await axios.get(`${API_BASE_URL}/posts`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching jobs:', error);
-        throw error;
-    }
+  // In a real application, you would fetch data from an API
+  // For now, we'll return null and use mock data from the page component
+  return null;
 };
 
 export const fetchJobById = async (id: string) => {
