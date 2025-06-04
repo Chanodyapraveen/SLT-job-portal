@@ -1,0 +1,655 @@
+/* Base container */
+.container {
+  min-height: 100vh;
+  background: url('/Backgroundfindjob.png');
+  background-size: cover;
+  position: relative;
+  font-family: 'Inter', Arial, sans-serif;
+  padding-bottom: 135px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* TopBar */
+.topbar {
+  position: absolute;
+  width: 1875px;
+  height: 87px;
+  left: 5px;
+  top: 23px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 91px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logoContainer {
+  width: 234px;
+  height: 81px;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #0055A2;
+  margin-left: 10px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.divider {
+  font-size: 25px;
+  color: #000000;
+  margin: 0 8px;
+  font-weight: 400;
+}
+
+/* Main Content */
+.mainContent {
+  position: relative;
+  width: 100%;
+  height: 1000px; /* Ensure enough space for absolute positioning */
+}
+
+/* Main Heading */
+.mainHeading {
+  position: absolute;
+  width: 721px;
+  height: 70px;
+  left: 94px;
+  top: 175px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+}
+
+/* Job Cards Container */
+.jobCards {
+  position: relative;
+  width: 100%;
+}
+
+/* Card 1 - Trainee Network Engineers */
+.jobCardWrapper:nth-child(1) {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 57px;
+  top: 263px;
+}
+
+.jobCardWrapper:nth-child(1) .card {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+.jobCardWrapper:nth-child(1) .header {
+  position: absolute;
+  width: 404px;
+  height: 104px;
+  left: 0;
+  top: 0;
+  background: #0055A2;
+  border-radius: 30px 30px 0px 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; /* Add center alignment */
+  padding-bottom: 15px;
+  padding-left: 0; /* Remove left padding */
+  color: #FFFFFF;
+}
+
+.jobCardWrapper:nth-child(1) .body p {
+  position: absolute;
+  width: 375px;
+  height: 99px;
+  left: 13px;
+  top: 132px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.jobCardWrapper:nth-child(1) .body ul {
+  position: absolute;
+  width: 359px;
+  height: 144px;
+  left: 27px; /* Match card 3 */
+  top: 210px; /* Match card 3 */
+  list-style: none;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px; /* Match card 3 font size */
+  line-height: 198.52%; /* Match card 3 line height */
+  color: #666060;
+}
+
+.jobCardWrapper:nth-child(1) .body li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.jobCardWrapper:nth-child(1) .body li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 0px;
+  top: 11px;
+  background: #666060;
+  border-radius: 50%;
+}
+
+.jobCardWrapper:nth-child(1) .applyBtn {
+  position: absolute;
+  width: 212px;
+  height: 48px;
+  left: 95px;
+  top: 426px;
+  background: #4DB848;
+  border-radius: 42px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Card 2 - ACCOUNTANT-FINANCIAL ACCOUNTING */
+.jobCardWrapper:nth-child(2) {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 521px;
+  top: 263px;
+}
+
+.jobCardWrapper:nth-child(2) .card {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+.jobCardWrapper:nth-child(2) .header {
+  position: absolute;
+  width: 404px;
+  height: 104px;
+  left: 0;
+  top: 0;
+  background: #0055A2;
+  border-radius: 30px 30px 0px 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; /* Add center alignment */
+  padding-bottom: 15px;
+  padding-left: 0; /* Remove left padding */
+  color: #FFFFFF;
+}
+
+.jobCardWrapper:nth-child(2) .body p {
+  position: absolute;
+  width: 375px;
+  height: 145px;
+  left: 13px;
+  top: 132px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.jobCardWrapper:nth-child(2) .body ul {
+  position: absolute;
+  width: 359px;
+  height: 144px;
+  left: 27px; /* Match card 3 */
+  top: 277px; /* Keep original top value since content length is different */
+  list-style: none;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px; /* Match card 3 font size */
+  line-height: 198.52%; /* Match card 3 line height */
+  color: #666060;
+}
+
+.jobCardWrapper:nth-child(2) .body li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.jobCardWrapper:nth-child(2) .body li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 0px;
+  top: 11px;
+  background: #666060;
+  border-radius: 50%;
+}
+
+.jobCardWrapper:nth-child(2) .applyBtn {
+  position: absolute;
+  width: 212px;
+  height: 48px;
+  left: 95px;
+  top: 426px;
+  background: #4DB848;
+  border-radius: 42px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Card 3 - ENGINEERS */
+.jobCardWrapper:nth-child(3) {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 985px;
+  top: 263px;
+}
+
+.jobCardWrapper:nth-child(3) .card {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+.jobCardWrapper:nth-child(3) .header {
+  position: absolute;
+  width: 404px;
+  height: 104px;
+  left: 0;
+  top: 0;
+  background: #0055A2;
+  border-radius: 30px 30px 0px 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+  color: #FFFFFF;
+}
+
+.jobCardWrapper:nth-child(3) .body p {
+  position: absolute;
+  width: 375px;
+  height: 72px;
+  left: 13px;
+  top: 132px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.jobCardWrapper:nth-child(3) .body ul {
+  position: absolute;
+  width: 359px;
+  height: 144px;
+  left: 27px;
+  top: 210px;
+  list-style: none;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 198.52%;
+  color: #666060;
+}
+
+.jobCardWrapper:nth-child(3) .body li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.jobCardWrapper:nth-child(3) .body li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 0px;
+  top: 11px;
+  background: #666060;
+  border-radius: 50%;
+}
+
+.jobCardWrapper:nth-child(3) .applyBtn {
+  position: absolute;
+  width: 212px;
+  height: 48px;
+  left: 95px;
+  top: 426px;
+  background: #4DB848;
+  border-radius: 42px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Card 4 - TECHNICIANS */
+.jobCardWrapper:nth-child(4) {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 1449px;
+  top: 263px;
+}
+
+.jobCardWrapper:nth-child(4) .card {
+  position: absolute;
+  width: 404px;
+  height: 497px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+.jobCardWrapper:nth-child(4) .header {
+  position: absolute;
+  width: 404px;
+  height: 104px;
+  left: 0;
+  top: 0;
+  background: #0055A2;
+  border-radius: 30px 30px 0px 0px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+  color: #FFFFFF;
+}
+
+.jobCardWrapper:nth-child(4) .body p {
+  position: absolute;
+  width: 378px;
+  height: 99px;
+  left: 13px;
+  top: 132px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.jobCardWrapper:nth-child(4) .body ul {
+  position: absolute;
+  width: 359px;
+  height: 167px;
+  left: 38px;
+  top: 226px;
+  list-style: none;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 198.52%;
+  color: #666060;
+}
+
+.jobCardWrapper:nth-child(4) .body li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.jobCardWrapper:nth-child(4) .body li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 0px;
+  top: 11px;
+  background: #666060;
+  border-radius: 50%;
+}
+
+.jobCardWrapper:nth-child(4) .applyBtn {
+  position: absolute;
+  width: 212px;
+  height: 48px;
+  left: 95px;
+  top: 426px;
+  background: #4DB848;
+  border-radius: 42px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Status Check Button */
+.statusCheckContainer {
+  position: absolute;
+  width: 538px;
+  height: 120px;
+  left: 634px;
+  top: 813px;
+}
+
+.statusCheckButton {
+  position: absolute;
+  width: 493px;
+  height: 72px;
+  left: 24px;
+  top: 32px;
+  background: #0055A2;
+  border-radius: 39px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.statusCheckButton:hover {
+  background-color: #00417C;
+}
+
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1900px) {
+  .container {
+    overflow-x: auto;
+  }
+
+  .topbar {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    overflow-x: auto;
+  }
+  
+  .topbar {
+    position: relative;
+    width: 95%;
+    height: auto;
+    padding: 15px 0;
+    margin: 10px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    flex-direction: column;
+  }
+  
+  .logoContainer {
+    margin-left: 0;
+  }
+  
+  .nav {
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .mainContent {
+    padding-top: 170px;
+    height: auto;
+  }
+  
+  .mainHeading {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-size: 32px;
+    line-height: 38px;
+    margin: 0 auto 30px;
+  }
+  
+  .jobCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .jobCardWrapper {
+    position: relative !important;
+    width: 90%;
+    max-width: 404px;
+    left: auto !important;
+    top: auto !important;
+    margin-bottom: 30px;
+  }
+  
+  .card, .header {
+    width: 100% !important;
+  }
+  
+  .statusCheckContainer {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .statusCheckButton {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+  }
+  
+  .footer {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 60px;
+  }
+}

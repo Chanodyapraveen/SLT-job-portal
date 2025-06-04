@@ -32,7 +32,7 @@ const Register: React.FC = () => {
           {/* Left side - Image */}
           <div className={styles.imageContainer}>
             <Image
-              src="/registrationimage.png" // Make sure to add this image to your public folder
+              src="/register image.png" // Make sure to add this image to your public folder
               alt="Registration illustration"
               width={467}
               height={611}

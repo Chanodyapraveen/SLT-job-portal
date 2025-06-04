@@ -1,0 +1,330 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: url('/background.png'), #E7FCFB;
+  background-size: cover;
+  position: relative;
+  font-family: 'Inter', Arial, sans-serif;
+  padding-bottom: 60px;
+}
+
+/* TopBar */
+.topbar {
+  position: relative;
+  width: 1875px;
+  max-width: 98%;
+  height: 87px;
+  margin: 23px auto;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 91px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logoContainer {
+  width: 234px;
+  height: 81px;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #0055A2;
+  margin-left: 10px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.divider {
+  font-size: 25px;
+  color: #000000;
+  margin: 0 8px;
+  font-weight: 400;
+}
+
+/* Application Form */
+.applicationForm {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.formLabel {
+  width: 350px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.jobTitleValue {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+}
+
+.formInput, .formSelect {
+  width: 1108px;
+  height: 71px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 1108px;
+}
+
+.selectWrapper::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 71px;
+  height: 71px;
+  background-image: url('/dropdown-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.formSelect {
+  appearance: none;
+  padding-right: 100px; /* Space for the custom dropdown icon */
+}
+
+.dateInputWrapper {
+  position: relative;
+  width: 1108px;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Upload Section */
+.uploadSection {
+  margin-bottom: 50px;
+}
+
+.uploadLabel {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.dropZone {
+  width: 90%;
+  max-width: 1275px;
+  height: 458px;
+  margin: 0 auto;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.dragging {
+  border-color: #0055A2;
+  background-color: rgba(0, 85, 162, 0.1);
+}
+
+.dragDropText {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  color: #666;
+  margin: 20px 0 10px 0;
+}
+
+.orText {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.browseButton {
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  background-color: #0055A2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.browseButton:hover {
+  background-color: #00417C;
+}
+
+.fileInput {
+  display: none;
+}
+
+.selectedFile {
+  margin-top: 15px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0055A2;
+}
+
+/* Submit Button */
+.submitContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.submitButton {
+  width: 398px;
+  height: 77px;
+  background: #0055A2;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #00417C;
+}
+
+/* Responsive styles */
+@media (max-width: 1920px) {
+  .topbar {
+    width: 95%;
+  }
+  
+  .formInput, .formSelect, .selectWrapper, .dateInputWrapper {
+    width: 70vw;
+    max-width: 1108px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .formLabel {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-right: 0;
+    font-size: 30px;
+  }
+  
+  .formInput, .formSelect, .selectWrapper, .dateInputWrapper {
+    width: 100%;
+  }
+  
+  .dropZone {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    border-radius: 30px;
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    margin: 10px auto;
+  }
+  
+  .logoContainer {
+    margin-left: 0;
+  }
+  
+  .nav {
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .formLabel, .uploadLabel {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .jobTitleValue {
+    font-size: 24px;
+  }
+  
+  .formInput, .formSelect {
+    height: 50px;
+  }
+  
+  .submitButton {
+    width: 80%;
+    max-width: 300px;
+    height: 60px;
+    font-size: 30px;
+  }
+}

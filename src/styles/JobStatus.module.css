@@ -1,0 +1,208 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: url('/background.png'), #E7FCFB;
+  background-size: cover;
+  position: relative;
+  font-family: 'Inter', Arial, sans-serif;
+  padding-bottom: 60px;
+}
+
+/* TopBar */
+.topbar {
+  position: relative;
+  width: 1875px;
+  max-width: 98%;
+  height: 87px;
+  margin: 23px auto;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 91px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logoContainer {
+  width: 234px;
+  height: 81px;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #0055A2;
+  margin-left: 10px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.divider {
+  font-size: 25px;
+  color: #000000;
+  margin: 0 8px;
+  font-weight: 400;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 0 50px;
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+.statusCard {
+  width: 1725px;
+  max-width: 95%;
+  height: auto;
+  min-height: 488px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 4px 41px -9px rgba(0, 0, 0, 0.25);
+  border-radius: 61px;
+  padding: 40px;
+}
+
+.statusHeading {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+/* Status Table */
+.statusTable {
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.tableHeader {
+  display: flex;
+  width: 100%;
+  background: #0055A2;
+  border-radius: 36px;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+
+.headerCell {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.tableRow {
+  display: flex;
+  width: 100%;
+  background: rgba(24, 24, 24, 0.05);
+  border-radius: 10px;
+  padding: 15px 0;
+  margin-bottom: 8px;
+}
+
+.tableRow:nth-child(odd) {
+  background: rgba(24, 24, 24, 0.05);
+}
+
+.tableRow:nth-child(even) {
+  background: rgba(30, 30, 30, 0.05);
+}
+
+.tableCell {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1800px) {
+  .statusCard {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tableHeader, .tableRow {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    border-radius: 30px;
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    margin: 10px auto;
+  }
+  
+  .logoContainer {
+    margin-left: 0;
+  }
+  
+  .nav {
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tableHeader, .tableRow {
+    font-size: 16px;
+  }
+  
+  .headerCell, .tableCell {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tableHeader, .tableRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .headerCell, .tableCell {
+    margin-bottom: 10px;
+  }
+  
+  .statusHeading {
+    font-size: 30px;
+  }
+}

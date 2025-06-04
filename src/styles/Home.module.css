@@ -132,6 +132,28 @@
   position: relative;
 }
 
+.cardButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.applyNowButton {
+  background-color: #4DB848;
+  color: white;
+  border: none;
+  border-radius: 42px;
+  padding: 10px 25px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+.cardButton a {
+  text-decoration: none;
+}
 /* Footer */
 .footer {
   width: 100%;

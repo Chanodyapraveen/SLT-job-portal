@@ -75,7 +75,7 @@ const Login: React.FC = () => {
             
             <button className={styles.googleButton}>
               <Image 
-                src="/google-icon.png" 
+                src="/google.png" 
                 alt="Sign in with Google" 
                 width={30} 
                 height={30} 
@@ -87,7 +87,7 @@ const Login: React.FC = () => {
         {/* Right Side - Illustration */}
         <div className={styles.illustrationSection}>
           <Image
-            src="/login-illustration.png"
+            src="/login image.png"
             alt="Login illustration"
             width={628}
             height={603}

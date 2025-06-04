@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
         
         <div className={styles.imageContent}>
           <Image
-            src="/team-image.jpg"
+            src="/team.jpg"
             alt="Team members"
             width={812}
             height={643}
