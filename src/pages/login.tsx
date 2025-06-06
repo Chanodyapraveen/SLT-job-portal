@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from '../styles/Login.module.css';
 
 const Login: React.FC = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -17,10 +21,42 @@ const Login: React.FC = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt with:', formData);
-    // Add authentication logic here
+    setError('');
+    setLoading(true);
+    
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        // Save auth token to local storage
+        localStorage.setItem('authToken', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        
+        // Redirect based on user role
+        if (data.user.role === 'admin') {
+          router.push('/admin/jobcreation');
+        } else {
+          router.push('/');
+        }
+      } else {
+        setError(data.message || 'Invalid email or password');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.');
+      console.error('Login error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
   
   return (
@@ -29,6 +65,8 @@ const Login: React.FC = () => {
         {/* Left Side - Login Form */}
         <div className={styles.formSection}>
           <h1 className={styles.loginTitle}>Login</h1>
+          
+          {error && <div className={styles.errorMessage}>{error}</div>}
           
           <form onSubmit={handleSubmit} className={styles.loginForm}>
             <div className={styles.inputGroup}>
@@ -57,8 +95,12 @@ const Login: React.FC = () => {
               />
             </div>
             
-            <button type="submit" className={styles.signInButton}>
-              Sign In
+            <button 
+              type="submit" 
+              className={styles.signInButton}
+              disabled={loading}
+            >
+              {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
           

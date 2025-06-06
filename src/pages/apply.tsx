@@ -72,11 +72,53 @@ const ApplyPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form data:', formData);
-    console.log('File:', selectedFile);
-    // Add submission logic here
+    
+    // First upload the resume file
+    const formData = new FormData();
+    formData.append('file', selectedFile as File);
+    
+    try {
+      // Step 1: Upload file
+      const uploadResponse = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const uploadData = await uploadResponse.json();
+      
+      if (!uploadData.success) {
+        alert('Failed to upload resume file');
+        return;
+      }
+      
+      // Step 2: Submit application with resume URL
+      const applicationData = {
+        ...formData,
+        resumeUrl: uploadData.file.url
+      };
+      
+      const submitResponse = await fetch('/api/applications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(applicationData)
+      });
+      
+      const submitData = await submitResponse.json();
+      
+      if (submitData.success) {
+        alert(`Application submitted successfully! Your application ID is: ${submitData.applicationId}`);
+        // Reset form or redirect
+      } else {
+        alert('Failed to submit application');
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('An error occurred during submission');
+    }
   };
 
   return (
