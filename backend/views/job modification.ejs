@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLT Job Portal - Job Modification</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation Bar -->
+        <div class="topBar">
+            <div class="logo"></div>
+            <span class="title">Training Program</span>
+            <div class="navLinks">
+                <a href="/admin" class="navLink">Home</a>
+                <a href="/api/auth/logout" class="navLink">Logout</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <a href="/admin/job-creation" class="sidebarItem">
+                <div class="polygon"></div>
+                <span>Job Creation</span>
+            </a>
+            <a href="/admin/job-modification" class="sidebarItem active">
+                <div class="polygon"></div>
+                <span>Job Modification</span>
+            </a>
+            <a href="/admin/received-cvs" class="sidebarItem">
+                <div class="polygon"></div>
+                <span>Received CVs</span>
+            </a>
+            <a href="/admin/accepted-cvs" class="sidebarItem">
+                <div class="polygon"></div>
+                <span>Accepted CVs</span>
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="searchContainer">
+            <div class="searchBar">
+                <input type="text" id="searchInput" placeholder="|Search">
+                <div class="searchIcon"></div>
+            </div>
+        </div>
+
+        <!-- Jobs Table -->
+        <div class="tableHeader">
+            <div class="jobId">Job ID</div>
+            <div class="jobField">Job Field</div>
+            <div class="createdDate">Created Date</div>
+            <div class="status">Status</div>
+            <div class="modification">Modification</div>
+        </div>
+
+        <!-- Job Rows -->
+        <% jobs.forEach((job, index) => { %>
+            <div class="tableRow">
+                <div class="jobId"><%= job.jobId %></div>
+                <div class="jobField"><%= job.jobField %></div>
+                <div class="createdDate"><%= new Date(job.createdAt).toISOString().split('T')[0].replace(/-/g, '/') %></div>
+                <div class="status"><%= job.status %></div>
+                <div class="modification">
+                    <a href="/admin/job-edit/<%= job._id %>" class="editIcon"></a>
+                    <button class="deleteIcon" data-id="<%= job._id %>"></button>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <script src="/js/job-modification.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 1715px;
+    background: #FFFFFF;
+    background-image: url('/images/background.png');
+    background-size: cover;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TopBar */
+.topBar {
+    position: absolute;
+    width: 1875px;
+    height: 87px;
+    left: 25px;
+    top: 29px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 91px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    width: 234px;
+    height: 81px;
+    left: 60px;
+    background-image: url('/images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.title {
+    position: absolute;
+    left: 329px;
+    top: 58px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #0055A2;
+}
+
+.navLinks {
+    position: absolute;
+    right: 60px;
+    display: flex;
+    gap: 60px;
+}
+
+.navLink {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.home {
+    position: relative;
+    left: -60px;
+}
+
+.logout {
+    position: relative;
+    left: -60px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    width: 428.74px;
+    height: 1716px;
+    left: 18.13px;
+    top: 9px;
+    background: #0055A2;
+    z-index: 5;
+    padding-top: 200px;
+}
+
+.sidebarItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    padding-left: 94px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+
+.sidebarItem.active {
+    font-weight: 700;
+}
+
+.polygon {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 78px;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+.polygon1 {
+    top: 245px;
+    transform: translateY(-245px) rotate(90deg);
+}
+
+.polygon2 {
+    top: 364px;
+    transform: translateY(-364px) rotate(90deg);
+}
+
+.polygon3 {
+    top: 475px;
+    transform: translateY(-475px) rotate(90deg);
+}
+
+.polygon4 {
+    left: 51px;
+    top: 13.76px;
+    transform: rotate(90deg);
+}
+
+.jobCreation {
+    position: absolute;
+    width: 226px;
+    height: 44px;
+    left: 0;
+    top: 259px;
+}
+
+.jobModification {
+    position: absolute;
+    width: 284px;
+    height: 44px;
+    left: 0;
+    top: 374px;
+}
+
+.receivedCVs {
+    position: absolute;
+    width: 234px;
+    height: 44px;
+    left: 0;
+    top: 489px;
+}
+
+.acceptedCVs {
+    position: absolute;
+    width: 242px;
+    height: 44px;
+    left: 0;
+    top: 28px;
+}
+
+/* Main Content */
+.mainContent {
+    position: absolute;
+    width: 1385px;
+    height: 1198px;
+    left: 493px;
+    top: 252px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 62px;
+    filter: drop-shadow(0px 4px 99px rgba(0, 0, 0, 0.1));
+    z-index: 1;
+    padding: 13px 15px;
+}
+
+.pageTitle {
+    width: 1002px;
+    height: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.jobForm {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.formGroup {
+    position: absolute;
+}
+
+/* Labels */
+label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+}
+
+/* Job ID */
+.formGroup:nth-child(1) {
+    left: 18px;
+    top: 68px;
+}
+
+.formGroup:nth-child(1) label {
+    position: absolute;
+    width: 108px;
+    height: 36px;
+}
+
+.formGroup:nth-child(1) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 47px;
+    left: 0;
+}
+
+/* Job Field */
+.formGroup:nth-child(2) {
+    left: 18px;
+    top: 215px;
+}
+
+.formGroup:nth-child(2) label {
+    position: absolute;
+    width: 146px;
+    height: 36px;
+}
+
+.formGroup:nth-child(2) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 45px;
+    left: 0;
+}
+
+/* Job Position */
+.formGroup:nth-child(3) {
+    left: 477px;
+    top: 208px;
+}
+
+.formGroup:nth-child(3) label {
+    position: absolute;
+    width: 200px;
+    height: 36px;
+}
+
+.formGroup:nth-child(3) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 53px;
+    left: 7px;
+}
+
+/* Contact Number */
+.formGroup:nth-child(4) {
+    left: 954px;
+    top: 204px;
+}
+
+.formGroup:nth-child(4) label {
+    position: absolute;
+    width: 252px;
+    height: 36px;
+}
+
+.formGroup:nth-child(4) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 57px;
+    left: -4px;
+}
+
+/* Background */
+.formGroup:nth-child(5) {
+    left: 18px;
+    top: 361px;
+}
+
+.formGroup:nth-child(5) label {
+    position: absolute;
+    width: 186px;
+    height: 36px;
+}
+
+.formGroup:nth-child(5) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 58px;
+    left: 0;
+}
+
+/* Salary */
+.formGroup:nth-child(6) {
+    left: 484px;
+    top: 361px;
+}
+
+.formGroup:nth-child(6) label {
+    position: absolute;
+    width: 106px;
+    height: 36px;
+}
+
+.formGroup:nth-child(6) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 58px;
+    left: 0;
+}
+
+/* Due Date */
+.formGroup:nth-child(7) {
+    left: 954px;
+    top: 361px;
+}
+
+.formGroup:nth-child(7) label {
+    position: absolute;
+    width: 140px;
+    height: 36px;
+}
+
+.dateInputContainer {
+    position: relative;
+}
+
+.dateField {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 57px;
+    left: -4px;
+}
+
+.calendarIcon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 334px;
+    top: 70px;
+    background-image: url('/images/calendar.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Company Email */
+.formGroup:nth-child(8) {
+    left: 18px;
+    top: 515px;
+}
+
+.formGroup:nth-child(8) label {
+    position: absolute;
+    width: 227px;
+    height: 36px;
+}
+
+.formGroup:nth-child(8) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 64px;
+    left: 0;
+}
+
+/* Company Location */
+.formGroup:nth-child(9) {
+    left: 484px;
+    top: 515px;
+}
+
+.formGroup:nth-child(9) label {
+    position: absolute;
+    width: 274px;
+    height: 36px;
+}
+
+.formGroup:nth-child(9) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 64px;
+    left: -7px;
+}
+
+/* Work Type */
+.formGroup:nth-child(10) {
+    left: 18px;
+    top: 678px;
+}
+
+.formGroup:nth-child(10) label {
+    position: absolute;
+    width: 401px;
+    height: 36px;
+}
+
+.formGroup:nth-child(10) input {
+    position: absolute;
+    width: 401px;
+    height: 71px;
+    top: 56px;
+    left: 0;
+}
+
+/* Job Description */
+.formGroup:nth-child(11) {
+    left: 484px;
+    top: 685px;
+}
+
+.formGroup:nth-child(11) label {
+    position: absolute;
+    width: 248px;
+    height: 36px;
+}
+
+.formGroup:nth-child(11) textarea {
+    position: absolute;
+    width: 869px;
+    height: 165px;
+    top: 61px;
+    left: 0;
+}
+
+/* Input styling */
+.inputField, .textareaField {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+.textareaField {
+    resize: none;
+    padding: 15px 20px;
+}
+
+/* Create Button */
+.createButton {
+    position: absolute;
+    width: 276px;
+    height: 71px;
+    left: 1057px;
+    top: 960px;
+    background: #2D46CE;
+    border: none;
+    border-radius: 56px;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.createButton:hover {
+    background: #2538a0;
+}

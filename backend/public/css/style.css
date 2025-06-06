@@ -1,0 +1,224 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #FFFFFF;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Top Bar */
+.topBar {
+    position: absolute;
+    width: 1875px;
+    height: 87px;
+    left: 24px;
+    top: 28px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 91px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 10;
+}
+
+.logo {
+    width: 234px;
+    height: 81px;
+    background-image: url('/images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+
+.title {
+    position: absolute;
+    left: 328px;
+    top: 57px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #0055A2;
+}
+
+.navLinks {
+    margin-left: auto;
+    display: flex;
+    gap: 60px;
+}
+
+.navLink {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    width: 428.74px;
+    height: 1716px;
+    left: 17.13px;
+    top: 0px;
+    background: #0055A2;
+    padding-top: 150px;
+    z-index: 1;
+}
+
+.sidebarItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-left: 120px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+
+.sidebarItem.active {
+    font-weight: 700;
+}
+
+.polygon {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 30px;
+    background: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+/* Search Bar */
+.searchContainer {
+    position: absolute;
+    right: 100px;
+    top: 162px;
+    z-index: 5;
+}
+
+.searchBar {
+    position: relative;
+    width: 646px;
+    height: 89px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 91px;
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    position: absolute;
+    width: 497px;
+    height: 64px;
+    left: 16px;
+    background: #F3F7F7;
+    border: none;
+    border-radius: 91px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: rgba(0, 0, 0, 0.39);
+    padding-left: 30px;
+}
+
+.searchIcon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    background-image: url('/images/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Table Styles */
+.tableHeader {
+    position: absolute;
+    width: 1391px;
+    height: 58px;
+    left: 229px;
+    top: 374px;
+    background: #0055A2;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.tableRow {
+    position: relative;
+    width: 1377px;
+    height: 64px;
+    left: 245px;
+    margin-top: 10px;
+    background: rgba(217, 217, 217, 0.23);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.tableRow:nth-child(1) {
+    margin-top: 110px;
+}
+
+.jobId, .status {
+    width: 15%;
+}
+
+.jobField, .createdDate {
+    width: 25%;
+}
+
+.modification {
+    width: 20%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.editIcon, .deleteIcon {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.editIcon {
+    background-image: url('/images/edit.png');
+}
+
+.deleteIcon {
+    background-image: url('/images/trash.png');
+}

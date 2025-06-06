@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLT Job Portal - Job Creation</title>
+    <link rel="stylesheet" href="/css/job-creation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- TopBar -->
+    <div class="topBar">
+        <div class="logo"></div>
+        <span class="title">Training Program</span>
+        <div class="navLinks">
+            <a href="/admin" class="navLink home">Home</a>
+            <a href="/api/auth/logout" class="navLink logout">Logout</a>
+        </div>
+    </div>
+    
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="/admin/job-creation" class="sidebarItem jobCreation active">
+            <div class="polygon polygon1"></div>
+            <span>Job Creation</span>
+        </a>
+        <a href="/admin/job-modification" class="sidebarItem jobModification">
+            <div class="polygon polygon2"></div>
+            <span>Job Modification</span>
+        </a>
+        <a href="/admin/received-cvs" class="sidebarItem receivedCVs">
+            <div class="polygon polygon3"></div>
+            <span>Received CVs</span>
+        </a>
+        <a href="/admin/accepted-cvs" class="sidebarItem acceptedCVs">
+            <div class="polygon polygon4"></div>
+            <span>Accepted CVs</span>
+        </a>
+    </div>
+    
+    <!-- Main Content - Job Creation Form -->
+    <div class="mainContent">
+        <h1 class="pageTitle">Company Job Vacancy : Web Development Trainee</h1>
+        
+        <form id="jobCreationForm" class="jobForm">
+            <div class="formGroup">
+                <label for="jobId">Job ID :</label>
+                <input type="text" id="jobId" name="jobId" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="jobField">Job Field :</label>
+                <input type="text" id="jobField" name="jobField" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="jobPosition">Job Position :</label>
+                <input type="text" id="jobPosition" name="jobPosition" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="contactNumber">Contact Number :</label>
+                <input type="text" id="contactNumber" name="contactNumber" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="background">Background :</label>
+                <input type="text" id="background" name="background" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="salary">Salary :</label>
+                <input type="text" id="salary" name="salary" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="dueDate">Due Date:</label>
+                <div class="dateInputContainer">
+                    <input type="date" id="dueDate" name="dueDate" class="inputField dateField">
+                    <div class="calendarIcon"></div>
+                </div>
+            </div>
+            
+            <div class="formGroup">
+                <label for="companyEmail">Company Email:</label>
+                <input type="email" id="companyEmail" name="companyEmail" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="companyLocation">Company Location:</label>
+                <input type="text" id="companyLocation" name="companyLocation" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="workType">Work Type:</label>
+                <input type="text" id="workType" name="workType" class="inputField">
+            </div>
+            
+            <div class="formGroup">
+                <label for="jobDescription">Job Description :</label>
+                <textarea id="jobDescription" name="jobDescription" class="textareaField"></textarea>
+            </div>
+            
+            <button type="submit" class="createButton">Create</button>
+        </form>
+    </div>
+
+    <script src="/js/job-creation.js"></script>
+</body>
+</html>
