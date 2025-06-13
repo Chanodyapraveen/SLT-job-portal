@@ -1,15 +1,21 @@
 const mongoose = require('mongoose');
 
+// Handle deprecation warning
+mongoose.set('strictQuery', false);
+
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const mongoURI = process.env.MONGO_URI || 
+      'mongodb+srv://chanodyapraveen:10UdfXJSOyLED4Hl@cluster0.xofnz7b.mongodb.net/chanodyapraveen?retryWrites=true&w=majority&appName=Cluster0';
+    
+    const conn = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
     
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    console.error(`MongoDB Connection Error: ${error.message}`);
     process.exit(1);
   }
 };

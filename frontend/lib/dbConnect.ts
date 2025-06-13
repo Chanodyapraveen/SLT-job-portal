@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/slt-job-portal';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://chanodyapraveen:10UdfXJSOyLED4Hl@cluster0.xofnz7b.mongodb.net/chanodyapraveen?retryWrites=true&w=majority&appName=Cluster0';
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
@@ -14,6 +14,8 @@ if (!cached) {
 }
 
 async function dbConnect() {
+  console.log('Connecting to MongoDB...');
+  
   if (cached.conn) {
     return cached.conn;
   }
@@ -23,13 +25,12 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    console.log('Connecting to MongoDB...');
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      console.log('MongoDB connected successfully');
+      console.log('Connected to MongoDB!');
       return mongoose;
     });
   }
-  
+
   try {
     cached.conn = await cached.promise;
   } catch (e) {
