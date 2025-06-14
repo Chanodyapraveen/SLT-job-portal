@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/JobCreation.module.css';
-import AdminProtected from '../../components/AdminProtected';
+import AdminLayout from '../../components/layouts/AdminLayouts';
 
 const JobCreationPage: React.FC = () => {
   const [jobData, setJobData] = useState({
@@ -49,197 +50,197 @@ const JobCreationPage: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {/* TopBar */}
-      <div className={styles.topBar}>
-        <div className={styles.logo}>
-          <Image 
-            src="/logo.png" 
-            alt="SLTMobitel Logo" 
-            width={234} 
-            height={81} 
-            priority
-          />
+    <AdminLayout>
+      <Head>
+        <title>Job Creation - SLTMobitel</title>
+      </Head>
+      
+      <div className={styles.container}>
+        {/* TopBar */}
+        <div className={styles.topBar}>
+          <div className={styles.logo}>
+            <Image 
+              src="/logo.png" 
+              alt="SLTMobitel Logo" 
+              width={234} 
+              height={81} 
+              priority
+            />
+          </div>
+          <span className={styles.title}>Training Program</span>
+          <div className={styles.nav}>
+            <Link href="/admin" className={styles.navLink}>Home</Link>
+            <Link href="/logout" className={styles.navLink}>Logout</Link>
+          </div>
         </div>
-        <span className={styles.title}>Training Program</span>
-        <div className={styles.nav}>
-          <Link href="/admin" className={styles.navLink}>Home</Link>
-          <Link href="/logout" className={styles.navLink}>Logout</Link>
+
+        {/* Sidebar Navigation */}
+        <div className={styles.sidebar}>
+          <Link href="/admin/jobcreation" className={`${styles.sidebarItem} ${styles.active}`}>
+            <div className={styles.polygon}></div>
+            <span>Job Creation</span>
+          </Link>
+          <Link href="/admin/jobmodification" className={styles.sidebarItem}>
+            <div className={styles.polygon}></div>
+            <span>Job Modification</span>
+          </Link>
+          <Link href="/admin/receivedcvs" className={styles.sidebarItem}>
+            <div className={styles.polygon}></div>
+            <span>Received CVs</span>
+          </Link>
+          <Link href="/admin/acceptedcvs" className={styles.sidebarItem}>
+            <div className={styles.polygon}></div>
+            <span>Accepted CVs</span>
+          </Link>
         </div>
-      </div>
 
-      {/* Sidebar Navigation */}
-      <div className={styles.sidebar}>
-        <Link href="/admin/jobcreation" className={`${styles.sidebarItem} ${styles.active}`}>
-          <div className={styles.polygon}></div>
-          <span>Job Creation</span>
-        </Link>
-        <Link href="/admin/jobmodification" className={styles.sidebarItem}>
-          <div className={styles.polygon}></div>
-          <span>Job Modification</span>
-        </Link>
-        <Link href="/admin/receivedcvs" className={styles.sidebarItem}>
-          <div className={styles.polygon}></div>
-          <span>Received CVs</span>
-        </Link>
-        <Link href="/admin/acceptedcvs" className={styles.sidebarItem}>
-          <div className={styles.polygon}></div>
-          <span>Accepted CVs</span>
-        </Link>
-      </div>
-
-      {/* Main Content - Job Creation Form */}
-      <div className={styles.formContainer}>
-        <h1 className={styles.formTitle}>Company Job Vacancy : Web Development Trainee</h1>
-        
-        <form onSubmit={handleSubmit}>
-          <div className={styles.formGrid}>
-            <div className={styles.formField}>
-              <label htmlFor="jobId">Job ID :</label>
-              <input
-                type="text"
-                id="jobId"
-                name="jobId"
-                value={jobData.jobId}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="jobField">Job Field :</label>
-              <input
-                type="text"
-                id="jobField"
-                name="jobField"
-                value={jobData.jobField}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="jobPosition">Job Position :</label>
-              <input
-                type="text"
-                id="jobPosition"
-                name="jobPosition"
-                value={jobData.jobPosition}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="contactNumber">Contact Number :</label>
-              <input
-                type="text"
-                id="contactNumber"
-                name="contactNumber"
-                value={jobData.contactNumber}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="background">Background :</label>
-              <input
-                type="text"
-                id="background"
-                name="background"
-                value={jobData.background}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="salary">Salary :</label>
-              <input
-                type="text"
-                id="salary"
-                name="salary"
-                value={jobData.salary}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="dueDate">Due Date:</label>
-              <div className={styles.dateContainer}>
+        {/* Main Content - Job Creation Form */}
+        <div className={styles.formContainer}>
+          <h1 className={styles.formTitle}>Company Job Vacancy : Web Development Trainee</h1>
+          
+          <form onSubmit={handleSubmit}>
+            <div className={styles.formGrid}>
+              <div className={styles.formField}>
+                <label htmlFor="jobId">Job ID :</label>
                 <input
-                  type="date"
-                  id="dueDate"
-                  name="dueDate"
-                  value={jobData.dueDate}
+                  type="text"
+                  id="jobId"
+                  name="jobId"
+                  value={jobData.jobId}
                   onChange={handleChange}
                   className={styles.inputField}
                 />
-                <div className={styles.calendarIcon}></div>
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="jobField">Job Field :</label>
+                <input
+                  type="text"
+                  id="jobField"
+                  name="jobField"
+                  value={jobData.jobField}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="jobPosition">Job Position :</label>
+                <input
+                  type="text"
+                  id="jobPosition"
+                  name="jobPosition"
+                  value={jobData.jobPosition}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="contactNumber">Contact Number :</label>
+                <input
+                  type="text"
+                  id="contactNumber"
+                  name="contactNumber"
+                  value={jobData.contactNumber}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="background">Background :</label>
+                <input
+                  type="text"
+                  id="background"
+                  name="background"
+                  value={jobData.background}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="salary">Salary :</label>
+                <input
+                  type="text"
+                  id="salary"
+                  name="salary"
+                  value={jobData.salary}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="dueDate">Due Date:</label>
+                <div className={styles.dateContainer}>
+                  <input
+                    type="date"
+                    id="dueDate"
+                    name="dueDate"
+                    value={jobData.dueDate}
+                    onChange={handleChange}
+                    className={styles.inputField}
+                  />
+                  <div className={styles.calendarIcon}></div>
+                </div>
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="companyEmail">Company Email:</label>
+                <input
+                  type="email"
+                  id="companyEmail"
+                  name="companyEmail"
+                  value={jobData.companyEmail}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="companyLocation">Company Location:</label>
+                <input
+                  type="text"
+                  id="companyLocation"
+                  name="companyLocation"
+                  value={jobData.companyLocation}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.formField}>
+                <label htmlFor="workType">Work Type:</label>
+                <input
+                  type="text"
+                  id="workType"
+                  name="workType"
+                  value={jobData.workType}
+                  onChange={handleChange}
+                  className={styles.inputField}
+                />
+              </div>
+              
+              <div className={styles.descriptionField}>
+                <label htmlFor="jobDescription">Job Description :</label>
+                <textarea
+                  id="jobDescription"
+                  name="jobDescription"
+                  value={jobData.jobDescription}
+                  onChange={handleChange}
+                  className={styles.textareaField}
+                ></textarea>
               </div>
             </div>
             
-            <div className={styles.formField}>
-              <label htmlFor="companyEmail">Company Email:</label>
-              <input
-                type="email"
-                id="companyEmail"
-                name="companyEmail"
-                value={jobData.companyEmail}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="companyLocation">Company Location:</label>
-              <input
-                type="text"
-                id="companyLocation"
-                name="companyLocation"
-                value={jobData.companyLocation}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.formField}>
-              <label htmlFor="workType">Work Type:</label>
-              <input
-                type="text"
-                id="workType"
-                name="workType"
-                value={jobData.workType}
-                onChange={handleChange}
-                className={styles.inputField}
-              />
-            </div>
-            
-            <div className={styles.descriptionField}>
-              <label htmlFor="jobDescription">Job Description :</label>
-              <textarea
-                id="jobDescription"
-                name="jobDescription"
-                value={jobData.jobDescription}
-                onChange={handleChange}
-                className={styles.textareaField}
-              ></textarea>
-            </div>
-          </div>
-          
-          <button type="submit" className={styles.createButton}>Create</button>
-        </form>
+            <button type="submit" className={styles.createButton}>Create</button>
+          </form>
+        </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 };
 
-const ProtectedJobCreationPage: React.FC = () => (
-  <AdminProtected>
-    <JobCreationPage />
-  </AdminProtected>
-);
-
-export default ProtectedJobCreationPage;
+export default JobCreationPage;

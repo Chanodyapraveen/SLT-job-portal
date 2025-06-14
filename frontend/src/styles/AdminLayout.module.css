@@ -1,0 +1,11 @@
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.adminContent {
+  flex: 1;
+  margin-left: 250px; /* Width of sidebar */
+  padding: 80px 2rem 2rem; /* Top padding accounts for header height */
+  background-color: #f5f7fa;
+}

@@ -27,7 +27,8 @@ const Login: React.FC = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('/api/auth/login', {
+      // Change this URL to point to your backend server
+      const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,9 +43,10 @@ const Login: React.FC = () => {
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         
-        // Redirect based on user role
+        // Redirect to backend admin page
         if (data.user.role === 'admin') {
-          router.push('/admin/jobcreation');
+          // Change this to your backend URL
+          window.location.href = 'http://localhost:5000/admin/job-creation';
         } else {
           router.push('/');
         }

@@ -20,6 +20,15 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// CORS options to allow requests from your frontend
+const corsOptions = {
+  origin: 'http://localhost:3000', // Your Next.js frontend URL
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 // Routes
 app.use('/api/jobs', require('./routes/jobs.routes'));
 app.use('/api/auth', require('./routes/auth.routes'));
@@ -45,4 +54,12 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+  .on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${PORT} is busy, trying ${PORT + 1}...`);
+      app.listen(PORT + 1, () => console.log(`Server running on port ${PORT + 1}`));
+    } else {
+      console.error(err);
+    }
+  });

@@ -2,34 +2,31 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 exports.protect = async (req, res, next) => {
-    let token;
+  let token;
+  
+  // Check in authorization header  
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
+  } 
+  // Also check cookies for token (useful for browser redirects)
+  else if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  }
+  
+  if (!token) {
+    console.log('No token provided');
+    return res.redirect('/api/auth/login');
+  }
+  
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
-    if (
-        req.headers.authorization && 
-        req.headers.authorization.startsWith('Bearer')
-    ) {
-        token = req.headers.authorization.split(' ')[1];
-    }
-    
-    if (!token) {
-        return res.status(401).json({
-            success: false,
-            message: 'Not authorized to access this route'
-        });
-    }
-    
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        
-        req.user = await User.findById(decoded.id);
-        next();
-    } catch (error) {
-        console.error('Auth middleware error:', error);
-        return res.status(401).json({
-            success: false,
-            message: 'Not authorized to access this route'
-        });
-    }
+    req.user = await User.findById(decoded.id);
+    next();
+  } catch (error) {
+    console.error('Auth error:', error);
+    return res.redirect('/api/auth/login');
+  }
 };
 
 exports.authorize = (...roles) => {
