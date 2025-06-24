@@ -32,6 +32,7 @@ app.use(cors(corsOptions));
 // Routes
 app.use('/api/jobs', require('./routes/jobs.routes'));
 app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/users', require('./routes/users.routes')); // Add users route
 app.use('/admin', require('./routes/admin.routes'));
 
 // Add this route to check authentication
